@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class ScannerEx {
+	public static void main(String args[]) { 
+        String a [] = {"박수 짝", "박수 짝짝"};
+        int x = 0;
+        
+		for (int i = 1; i<100; i++) {
+        	if ((i % 10 == 3) || (i % 10 == 6) || (i % 10 == 9)) {
+        		x += 1;
+        	}
+        	if (((i-30)<10)&&((i-30)>=0)) {
+        	    x +=1;
+        	}
+        	if (((i-60)<10)&&((i-60)>=0)) {
+        	    x +=1;
+        	}
+        	if (((i-90)<10)&&((i-90)>=0)) {
+        	    x +=1;
+        	}
+        	
+        	if (x > 0) {
+    			System.out.println(i + a[x-1]);
+    			x = 0;
+        }
+		
+		}
+	}
+	
+}
