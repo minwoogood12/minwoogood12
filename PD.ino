@@ -17,7 +17,7 @@
 #define _DIST_MAX 410 // [2972] 거리 센서가 인식 가능하게 설정한 최대 거리
 
 // Distance sensor
-#define _DIST_ALPHA 0.4   // [2959] ema 필터에 적용할 알파값
+#define _DIST_ALPHA 0.3   // [2959] ema 필터에 적용할 알파값
 
 // Servo range
 #define _DUTY_MIN 550 // [2952] 서보의 최소 각도값
@@ -35,7 +35,7 @@
 
 // PID parameters
 #define _KP 1.0 // [2957] 비례 제어 값
-#define _KD 40           // [2961] 비례이득
+#define _KD 50          // [2961] 비례이득
 
 // [2964] 실제 거리가 100mm, 400mm일 때 센서가 읽는 값(각 a, b)
 #define a 90
@@ -165,7 +165,7 @@ void loop() {
   
   if(event_serial) {
     event_serial = false; // [2974] 출력 이벤트 실행 후, 다음 주기까지 이벤트 종료
-    Serial.print("dist_ir");
+    Serial.print("dist_ir:");
     Serial.print(dist_raw); 
     Serial.print(",pterm:");
     Serial.print(map(pterm, -1000, 1000, 510, 610));    // [2961] 비례제어량 출력
